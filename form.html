@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Account Details Form</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
+ <script>
+$(document).ready(function(){
+  $("#myForm").submit(function(event){
+    event.preventDefault();
+
+    
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var phone = $("#phone").val();
+    var age = $("#age").val();
+    var gender = $("#gender").val();
+    var address = $("#address").val();
+
+    
+    if(name.length < 3 || name.length > 50){
+      alert("Name must be between 3 and 50 characters.");
+      return false;
+    }
+
+    if(email == ""){
+      alert("Email is required.");
+      return false;
+    }
+
+  
+    if(phone.length < 10 || phone.length > 14){
+      alert("Phone number must be between 10 and 14 digits.");
+      return false;
+    }
+
+    
+    if(age < 18 || age > 120){
+      alert("Age must be between 18 and 120.");
+      return false;
+    }
+
+    if(gender.length < 4 || gender.length > 15){
+      alert("Gender must be between 4 and 15 characters.");
+      return false;
+    }
+    if(address.length > 50){
+      alert("Address cannot exceed 50 characters.");
+      return false;
+    }
+    alert("Form submitted successfully!"); 
+  });
+});
+</script>
+</head>
+<body>
+
+<h2>Account Details</h2>
+
+<form id="myForm">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="phone">Phone:</label><br>
+  <input type="number" id="phone" name="phone" required><br><br>
+
+  <label for="age">Age:</label><br>
+  <input type="number" id="age" name="age" required><br><br>
+
+  <label for="gender">Gender:</label><br>
+  <input type="text" id="gender" name="gender" required><br><br>
+
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address"><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
