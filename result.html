@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Calculator</title>
+</head>
+<body>
+
+  <h1>Grade Calculator</h1>
+
+  <label for="marks">Enter Marks:</label>
+  <input type="number" id="marks" name="marks" min="0" max="100">
+  <button onclick="calculateGrade()">Submit</button>
+
+  <p id="result"></p>
+
+  <script>
+    function calculateGrade() {
+      var marks = document.getElementById("marks").value;
+      var result = document.getElementById("result");
+
+      if (marks >= 90) {
+        grade = "A+";
+      } else if (marks >= 80) {
+        grade = "A";
+      } else if (marks >= 70) {
+        grade = "B+";
+      } else if (marks >= 60) {
+        grade = "B";
+      } else if (marks >= 50) {
+        grade = "C+";
+      } else if (marks >= 40) {
+        grade = "C";
+      } else if (marks >= 30) {
+        grade = "D+";
+      } else if (marks >= 20) {
+        grade = "D";
+      } else {
+        grade = "E";
+      }
+
+      if (marks >= 30) {
+        result.innerHTML = "You are pass - Grade: " + grade;
+      } else {
+        result.innerHTML = "You are fail - Grade: " + grade;
+      }
+    }
+  </script>
+
+</body>
+</html>
